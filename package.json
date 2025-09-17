@@ -1,0 +1,52 @@
+{
+  "name": "fetchflow",
+  "version": "1.0.0",
+  "description": "A JavaScript execution environment that automatically pauses on fetch() calls, allows external HTTP processing, and resumes with injected responses",
+  "main": "index.ts",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./lib": "./fetch-vm-lib.ts"
+  },
+  "scripts": {
+    "test": "deno test --allow-read --allow-write --allow-net",
+    "build": "deno compile --allow-read --allow-write --allow-net fetch-vm-lib.ts"
+  },
+  "keywords": [
+    "javascript",
+    "vm",
+    "fetch",
+    "pause",
+    "resume",
+    "execution",
+    "state",
+    "async",
+    "quickjs",
+    "emscripten",
+    "flow-control",
+    "http",
+    "requests",
+    "serialization"
+  ],
+  "author": "Claude Code",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnEntrypoint/fetchflow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AnEntrypoint/fetchflow/issues"
+  },
+  "homepage": "https://github.com/AnEntrypoint/fetchflow#readme",
+  "dependencies": {
+    "quickjs-emscripten": "^0.31.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "fetch-vm-lib.ts",
+    "README.md",
+    "LICENSE"
+  ]
+}

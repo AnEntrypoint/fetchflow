@@ -1,0 +1,8 @@
+node_modules/
+deno.lock
+*.test.ts
+test/
+examples/
+.git/
+.github/
+.deno/
