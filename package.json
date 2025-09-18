@@ -1,5 +1,5 @@
 {
-  "name": "fetchflow",
+  "name": "fetchflow-vm",
   "version": "1.0.0",
   "description": "A JavaScript execution environment that automatically pauses on fetch() calls, allows external HTTP processing, and resumes with injected responses",
   "main": "index.ts",
