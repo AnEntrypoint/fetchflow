@@ -1,9 +1,6 @@
 {
   "name": "fetchflow",
-  "version": "1.3.0",
-  "description": "Production-grade JavaScript execution environment with automatic pause/resume on fetch() calls. Handles 300+ sequential operations with excellent performance. Perfect for workflow automation and API orchestration.",
-  "main": "sequential-fetch-vm-lib.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript execution environment that automatically pauses on fetch() calls, allows external HTTP processing, and resumes with injected responses",
   "main": "index.ts",
   "type": "module",
