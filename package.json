@@ -1,12 +1,13 @@
 {
-  "name": "fetchflow",
-  "version": "1.0.0",
-  "description": "A JavaScript execution environment that automatically pauses on fetch() calls, allows external HTTP processing, and resumes with injected responses",
-  "main": "index.ts",
+  "name": "fetchflow-vm",
+  "version": "1.2.0",
+  "description": "Production-grade JavaScript execution environment with automatic pause/resume on fetch() calls. Handles 300+ sequential operations with excellent performance. Perfect for workflow automation and API orchestration.",
+  "main": "sequential-fetch-vm-lib.js",
   "type": "module",
   "exports": {
-    ".": "./index.ts",
-    "./lib": "./fetch-vm-lib.ts"
+    ".": "./sequential-fetch-vm-lib.js",
+    "./lib": "./sequential-fetch-vm-lib.js",
+    "./legacy": "./fetch-vm-lib.ts"
   },
   "scripts": {
     "test": "deno test --allow-read --allow-write --allow-net",
@@ -26,7 +27,13 @@
     "flow-control",
     "http",
     "requests",
-    "serialization"
+    "serialization",
+    "workflow",
+    "automation",
+    "api-orchestration",
+    "production-ready",
+    "high-performance",
+    "scalable"
   ],
   "author": "Claude Code",
   "license": "MIT",
@@ -39,12 +46,15 @@
   },
   "homepage": "https://github.com/AnEntrypoint/fetchflow#readme",
   "dependencies": {
-    "quickjs-emscripten": "^0.31.0"
+    "quickjs-emscripten": "^0.31.0",
+    "acorn": "^8.11.3"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "files": [
+    "sequential-fetch-vm-lib.js",
+    "sequential-fetch-vm-lib.ts",
     "fetch-vm-lib.ts",
     "README.md",
     "LICENSE"

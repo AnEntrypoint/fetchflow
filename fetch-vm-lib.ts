@@ -1,4 +1,4 @@
-import { getQuickJS } from "quickjs-emscripten";
+import { getQuickJS } from "npm:quickjs-emscripten@0.23.0";
 
 export interface FetchRequest {
   id: string;
@@ -263,7 +263,36 @@ export class FetchVM {
 
   dispose() {
     if (this.vm) {
-      this.vm.dispose();
+      try {
+        // Force garbage collection multiple times
+        for (let i = 0; i < 3; i++) {
+          try {
+            this.vm.runtime.executePendingJobs();
+          } catch (e) {
+            // Ignore pending job errors
+          }
+        }
+
+        // Clear any remaining global references
+        try {
+          this.vm.evalCode(`
+            delete globalThis.__fetchPause;
+            delete globalThis.__fetchResponse;
+          `);
+        } catch (e) {
+          // Ignore cleanup errors
+        }
+
+      } catch (e) {
+        // Ignore all cleanup errors
+      }
+
+      // Dispose VM last
+      try {
+        this.vm.dispose();
+      } catch (e) {
+        // Even ignore disposal errors
+      }
       this.vm = null;
     }
   }
