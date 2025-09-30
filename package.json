@@ -2,11 +2,11 @@
   "name": "fetchflow-vm",
   "version": "1.3.1",
   "description": "A JavaScript execution environment that automatically pauses on fetch() calls, allows external HTTP processing, and resumes with injected responses",
-  "main": "index.ts",
-  "type": "module",
+  "main": "sequential-fetch-vm-lib.cjs",
+  "type": "commonjs",
   "exports": {
-    ".": "./sequential-fetch-vm-lib.js",
-    "./lib": "./sequential-fetch-vm-lib.js",
+    ".": "./sequential-fetch-vm-lib.cjs",
+    "./lib": "./sequential-fetch-vm-lib.cjs",
     "./legacy": "./fetch-vm-lib.ts"
   },
   "scripts": {
@@ -53,9 +53,7 @@
     "node": ">=18.0.0"
   },
   "files": [
-    "sequential-fetch-vm-lib.js",
-    "sequential-fetch-vm-lib.ts",
-    "fetch-vm-lib.ts",
+    "sequential-fetch-vm-lib.cjs",
     "README.md",
     "LICENSE"
   ]

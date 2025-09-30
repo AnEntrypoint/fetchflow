@@ -1,11 +1,10 @@
-import { getQuickJS } from "quickjs-emscripten";
-import * as acorn from "acorn";
+const { getQuickJS } = require("quickjs-emscripten");
+const acorn = require("acorn");
 
 
 
 
-
-export class SequentialFetchVM {
+class SequentialFetchVM {
   QuickJS;
   vm;
   allCode = "";
@@ -408,7 +407,7 @@ export class SequentialFetchVM {
 }
 
 // Convenience functions for library users
-export async function executeCode(code) {
+async function executeCode(code) {
   const vm = new SequentialFetchVM();
   await vm.initialize();
 
@@ -419,7 +418,7 @@ export async function executeCode(code) {
   }
 }
 
-export async function resumeExecution(state, fetchResponse) {
+async function resumeExecution(state, fetchResponse) {
   const vm = new SequentialFetchVM();
   await vm.initialize();
 
@@ -429,3 +428,9 @@ export async function resumeExecution(state, fetchResponse) {
     vm.dispose();
   }
 }
+
+module.exports = {
+  SequentialFetchVM,
+  executeCode,
+  resumeExecution
+};
